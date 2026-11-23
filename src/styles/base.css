@@ -1,1 +1,132 @@
-/* Base / reset styles */
+/* Base reset and global rules */
+
+@import './tokens.css';
+
+/* ── Fonts (self-hosted via @fontsource) ───────────────────────── */
+@import '@fontsource/cormorant-garamond/300.css';
+@import '@fontsource/cormorant-garamond/500.css';
+@import '@fontsource/cormorant-garamond/300-italic.css';
+@import '@fontsource/inter/400.css';
+@import '@fontsource/inter/500.css';
+
+/* ── Box model reset ───────────────────────────────────────────── */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* ── Hidden attribute ──────────────────────────────────────────── */
+[hidden] {
+  display: none !important;
+}
+
+/* ── Root dimensions ───────────────────────────────────────────── */
+html,
+body {
+  height: 100dvh;
+  overflow: hidden;
+  background: var(--void);
+  color: var(--bone);
+  font-family: var(--font-ui);
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+}
+
+/* ── Safe-area insets (iOS notch / home bar) ───────────────────── */
+body {
+  padding: env(safe-area-inset-top) env(safe-area-inset-right)
+    env(safe-area-inset-bottom) env(safe-area-inset-left);
+}
+
+/* ── Focus rings ───────────────────────────────────────────────── */
+/* Ghost-cyan outline for keyboard navigation */
+*:focus-visible {
+  outline: 2px solid var(--ghost);
+  outline-offset: 4px;
+}
+
+/* Suppress programmatic focus rings (used for heading focus-after-transition) */
+:focus:not(:focus-visible) {
+  outline: none;
+}
+
+/* ── Text selection ────────────────────────────────────────────── */
+::selection {
+  background: var(--ghost-dim);
+  color: var(--bone);
+}
+
+/* ── Scrollbar hiding (cosmetic) ───────────────────────────────── */
+* {
+  scrollbar-width: none;
+}
+
+*::-webkit-scrollbar {
+  display: none;
+}
+
+/* ── Text-wrap utilities ───────────────────────────────────────── */
+.balance {
+  text-wrap: balance;
+}
+
+.pretty {
+  text-wrap: pretty;
+}
+
+/* ── Numeric utility ───────────────────────────────────────────── */
+.tabular {
+  font-variant-numeric: tabular-nums;
+}
+
+/* ── Visually hidden (accessible headings, aria labels) ────────── */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* ── Scene base ────────────────────────────────────────────────── */
+.scene {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--scene-gap);
+  padding: var(--sp-3);
+}
+
+/* ── Reduced motion ────────────────────────────────────────────── */
+
+/* System preference */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 200ms !important;
+    animation-delay: 0ms !important;
+    transition-duration: 200ms !important;
+    transition-delay: 0ms !important;
+  }
+}
+
+/* ?rm=1 query-param override applied by main.ts to <html> */
+.reduce-motion *,
+.reduce-motion *::before,
+.reduce-motion *::after {
+  animation-duration: 200ms !important;
+  animation-delay: 0ms !important;
+  transition-duration: 200ms !important;
+  transition-delay: 0ms !important;
+}
