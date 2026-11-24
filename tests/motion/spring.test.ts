@@ -1,10 +1,10 @@
-/**
+﻿/**
  * Property-based and unit tests for src/motion/spring.ts
  *
- * P11 — Springs always settle (finite simulation budget)
+ * P11 ??Springs always settle (finite simulation budget)
  *   Validates: Requirements R16.2
  *
- * P12 — Spring overshoot at different frame rates differs by < 1 percentage point
+ * P12 ??Spring overshoot at different frame rates differs by < 1 percentage point
  *   Validates: Requirements R16.2
  */
 import { describe, it, expect } from 'vitest';
@@ -18,7 +18,7 @@ const presetNames = Object.keys(PRESETS) as PresetName[];
 // Unit tests
 // ---------------------------------------------------------------------------
 
-describe('Spring — set()', () => {
+describe('Spring ??set()', () => {
   it('snaps immediately, done = true, velocity = 0', () => {
     const s = new Spring(0, PRESETS.snappy);
     s.to(100);
@@ -31,7 +31,7 @@ describe('Spring — set()', () => {
   });
 });
 
-describe('Spring — tiny travel settles (absolute floor test)', () => {
+describe('Spring ??tiny travel settles (absolute floor test)', () => {
   it('from=0 to=0.0001 settles within 10 simulated seconds', () => {
     const s = new Spring(0, PRESETS.gentle);
     s.to(0.0001);
@@ -46,7 +46,7 @@ describe('Spring — tiny travel settles (absolute floor test)', () => {
   });
 });
 
-describe('Spring — step(dt > 0.1) clamps without blowing up', () => {
+describe('Spring ??step(dt > 0.1) clamps without blowing up', () => {
   it('a 1-second dt does not produce NaN', () => {
     const s = new Spring(0, PRESETS.jelly);
     s.to(100);
@@ -56,7 +56,7 @@ describe('Spring — step(dt > 0.1) clamps without blowing up', () => {
   });
 });
 
-describe('Spring — initial state is done', () => {
+describe('Spring ??initial state is done', () => {
   it('a freshly constructed spring reports done', () => {
     const s = new Spring(50, PRESETS.pop);
     expect(s.done).toBe(true);
@@ -64,11 +64,11 @@ describe('Spring — initial state is done', () => {
 });
 
 // ---------------------------------------------------------------------------
-// P11 — Springs always settle
+// P11 ??Springs always settle
 // ---------------------------------------------------------------------------
 
-describe('P11 — Springs always settle within 10 simulated seconds', () => {
-  it('every preset, any from/to in ±1000, dt = 1/60 s', () => {
+describe('P11 ??Springs always settle within 10 simulated seconds', () => {
+  it('every preset, any from/to in 짹1000, dt = 1/60 s', () => {
     fc.assert(
       fc.property(
         fc.constantFrom(...presetNames),
@@ -107,11 +107,9 @@ describe('P11 — Springs always settle within 10 simulated seconds', () => {
         (presetName, from, to, dts) => {
           const spring = new Spring(from, PRESETS[presetName]);
           spring.to(to);
-          let t = 0;
           for (const dt of dts) {
             if (spring.done) break;
             spring.step(dt);
-            t += dt;
           }
           // If not settled yet, that's acceptable for this run (finite budget)
           // but x and v must never be NaN.
@@ -125,10 +123,10 @@ describe('P11 — Springs always settle within 10 simulated seconds', () => {
 });
 
 // ---------------------------------------------------------------------------
-// P12 — Overshoot consistency across frame rates
+// P12 ??Overshoot consistency across frame rates
 // ---------------------------------------------------------------------------
 
-describe('P12 — Spring overshoot at 30/60/120 fps differs by < 1 percentage point', () => {
+describe('P12 ??Spring overshoot at 30/60/120 fps differs by < 1 percentage point', () => {
   it('pop preset, travels of 10..500', () => {
     fc.assert(
       fc.property(
@@ -171,10 +169,10 @@ describe('P12 — Spring overshoot at 30/60/120 fps differs by < 1 percentage po
 });
 
 // ---------------------------------------------------------------------------
-// P12 — Kick properties
+// P12 ??Kick properties
 // ---------------------------------------------------------------------------
 
-describe('Spring — kick()', () => {
+describe('Spring ??kick()', () => {
   it('P12-kick: kick does not change the target, only adds velocity, marks active', () => {
     fc.assert(
       fc.property(
@@ -212,7 +210,7 @@ describe('Prop', () => {
     const spec: TweenSpec = { from: 0, to: 1, dur: 1, ease: 'linear' };
     p.startTween(spec);
     p.step(0.5);
-    // At t=0.5 of a 1s linear tween, value ≈ 0.5
+    // At t=0.5 of a 1s linear tween, value ??0.5
     expect(p.value).toBeCloseTo(0.5, 5);
   });
 

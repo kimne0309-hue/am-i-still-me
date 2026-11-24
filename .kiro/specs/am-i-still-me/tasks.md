@@ -14,7 +14,7 @@ Work top to bottom, one task per Kiro run. After every task: `npm test` is green
 - [x] 7. `core/schedule.ts` auto crescendo + P14.
 - [x] 8. `core/state.ts` FSM v2 + SessionData reducer + P6, P7. (R17.3–4)
 - [x] 9. `core/endings.ts` (8 endings, poetic pool + no-repeat picker) + P8. `core/i18n.ts` with every UI string.
-- [-] 10. `motion/spring.ts` (Spring, Prop with tween) + P11, P12. `core/director-model.ts` + P13.
+- [x] 10. `motion/spring.ts` (Spring, Prop with tween) + P11, P12. `core/director-model.ts` + P13.
 
 ## Phase 2 — Motion engine
 - [ ] 11. `motion/ticker.ts` (single rAF, dt clamp 0.1 s, speed, auto-stop) and `motion/easings.ts` (PRESETS, CSS strings, fallbacks, `linear()` support detection).
