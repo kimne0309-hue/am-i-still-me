@@ -114,6 +114,16 @@
         "executionId": "73714b5f-ff97-45a6-b9b1-bae10cc0a905",
         "chatSessionId": "sess_589cc5ce-7b9e-4d03-a37a-60af8da558c1",
         "timestamp": 1795453593533
+      },
+      {
+        "executionId": "1d5e5515-7cb0-496e-8c32-a96ea843c417",
+        "chatSessionId": "sess_589cc5ce-7b9e-4d03-a37a-60af8da558c1",
+        "timestamp": 1795534288504
+      },
+      {
+        "executionId": "1d5e5515-7cb0-496e-8c32-a96ea843c417",
+        "chatSessionId": "sess_589cc5ce-7b9e-4d03-a37a-60af8da558c1",
+        "timestamp": 1795534422953
       }
     ],
     "6. `core/replacement.ts`: order, restore order, effect assignment, reassembly map + inverse + P1, P4, P5, P9. (R5.2, R6.6, R8.2)": [
@@ -126,6 +136,16 @@
         "executionId": "73714b5f-ff97-45a6-b9b1-bae10cc0a905",
         "chatSessionId": "sess_589cc5ce-7b9e-4d03-a37a-60af8da558c1",
         "timestamp": 1795453593942
+      },
+      {
+        "executionId": "1d5e5515-7cb0-496e-8c32-a96ea843c417",
+        "chatSessionId": "sess_589cc5ce-7b9e-4d03-a37a-60af8da558c1",
+        "timestamp": 1795534428007
+      },
+      {
+        "executionId": "1d5e5515-7cb0-496e-8c32-a96ea843c417",
+        "chatSessionId": "sess_589cc5ce-7b9e-4d03-a37a-60af8da558c1",
+        "timestamp": 1795534562720
       }
     ],
     "7. `core/schedule.ts` auto crescendo + P14.": [
@@ -138,6 +158,16 @@
         "executionId": "73714b5f-ff97-45a6-b9b1-bae10cc0a905",
         "chatSessionId": "sess_589cc5ce-7b9e-4d03-a37a-60af8da558c1",
         "timestamp": 1795453594411
+      },
+      {
+        "executionId": "1d5e5515-7cb0-496e-8c32-a96ea843c417",
+        "chatSessionId": "sess_589cc5ce-7b9e-4d03-a37a-60af8da558c1",
+        "timestamp": 1795534566277
+      },
+      {
+        "executionId": "1d5e5515-7cb0-496e-8c32-a96ea843c417",
+        "chatSessionId": "sess_589cc5ce-7b9e-4d03-a37a-60af8da558c1",
+        "timestamp": 1795534706222
       }
     ],
     "8. `core/state.ts` FSM v2 + SessionData reducer + P6, P7. (R17.3–4)": [
@@ -150,6 +180,16 @@
         "executionId": "73714b5f-ff97-45a6-b9b1-bae10cc0a905",
         "chatSessionId": "sess_589cc5ce-7b9e-4d03-a37a-60af8da558c1",
         "timestamp": 1795453594983
+      },
+      {
+        "executionId": "1d5e5515-7cb0-496e-8c32-a96ea843c417",
+        "chatSessionId": "sess_589cc5ce-7b9e-4d03-a37a-60af8da558c1",
+        "timestamp": 1795534710025
+      },
+      {
+        "executionId": "1d5e5515-7cb0-496e-8c32-a96ea843c417",
+        "chatSessionId": "sess_589cc5ce-7b9e-4d03-a37a-60af8da558c1",
+        "timestamp": 1795534824208
       }
     ],
     "9. `core/endings.ts` (8 endings, poetic pool + no-repeat picker) + P8. `core/i18n.ts` with every UI string.": [
@@ -162,6 +202,11 @@
         "executionId": "73714b5f-ff97-45a6-b9b1-bae10cc0a905",
         "chatSessionId": "sess_589cc5ce-7b9e-4d03-a37a-60af8da558c1",
         "timestamp": 1795453595412
+      },
+      {
+        "executionId": "1d5e5515-7cb0-496e-8c32-a96ea843c417",
+        "chatSessionId": "sess_589cc5ce-7b9e-4d03-a37a-60af8da558c1",
+        "timestamp": 1795534828372
       }
     ],
     "10. `motion/spring.ts` (Spring, Prop with tween) + P11, P12. `core/director-model.ts` + P13.": [

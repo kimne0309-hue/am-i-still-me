@@ -9,11 +9,11 @@ Work top to bottom, one task per Kiro run. After every task: `npm test` is green
 
 ## Phase 1 — Pure core, test-first
 - [x] 4. `core/rng.ts` + tests (determinism, [0,1), shuffle is a non-mutating permutation). (P2, R15)
-- [ ] 5. `core/grid.ts` (integer edges, neighbors, adjacent pairs) + P3.
-- [ ] 6. `core/replacement.ts`: order, restore order, effect assignment, reassembly map + inverse + P1, P4, P5, P9. (R5.2, R6.6, R8.2)
-- [ ] 7. `core/schedule.ts` auto crescendo + P14.
-- [ ] 8. `core/state.ts` FSM v2 + SessionData reducer + P6, P7. (R17.3–4)
-- [ ] 9. `core/endings.ts` (8 endings, poetic pool + no-repeat picker) + P8. `core/i18n.ts` with every UI string.
+- [x] 5. `core/grid.ts` (integer edges, neighbors, adjacent pairs) + P3.
+- [x] 6. `core/replacement.ts`: order, restore order, effect assignment, reassembly map + inverse + P1, P4, P5, P9. (R5.2, R6.6, R8.2)
+- [x] 7. `core/schedule.ts` auto crescendo + P14.
+- [x] 8. `core/state.ts` FSM v2 + SessionData reducer + P6, P7. (R17.3–4)
+- [-] 9. `core/endings.ts` (8 endings, poetic pool + no-repeat picker) + P8. `core/i18n.ts` with every UI string.
 - [ ] 10. `motion/spring.ts` (Spring, Prop with tween) + P11, P12. `core/director-model.ts` + P13.
 
 ## Phase 2 — Motion engine
