@@ -5,7 +5,7 @@ Work top to bottom, one task per Kiro run. After every task: `npm test` is green
 ## Phase 0 — Foundation
 - [x] 1. Scaffold Vite + TypeScript (strict), ESLint, Prettier, Vitest, fast-check, Playwright, `@fontsource/cormorant-garamond`, `@fontsource/inter`. Create the folder structure from structure.md. Scripts: `dev`, `build`, `preview`, `test`, `test:e2e`, `lint`.
 - [x] 2. `styles/tokens.css` + `base.css`: every color, type, spacing and layer token (design-system.md), plus the motion tokens with the exact `linear()` easings and durations (motion.md §2). Add `[hidden]{display:none!important}`, `100dvh`, safe areas, focus ring, and the reduced-motion overrides.
-- [ ] 3. GitHub Actions deploy to Pages (lint → test → e2e → build → deploy) with a placeholder page, so the live link exists from day 1. (design §14)
+- [x] 3. GitHub Actions deploy to Pages (lint → test → e2e → build → deploy) with a placeholder page, so the live link exists from day 1. (design §14)
 
 ## Phase 1 — Pure core, test-first
 - [ ] 4. `core/rng.ts` + tests (determinism, [0,1), shuffle is a non-mutating permutation). (P2, R15)
