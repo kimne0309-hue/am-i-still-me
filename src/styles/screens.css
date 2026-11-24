@@ -1,1 +1,68 @@
 /* Per-screen styles — added as screens are built */
+
+/* ── M1 Button hover ─────────────────────────────────────────────────── */
+/*
+ * Uses the CSS individual `translate` property so it never conflicts with
+ * WAAPI `transform` animations (M2 squash/stretch, scene choreography).
+ */
+.btn {
+  translate: 0 0;
+  transition:
+    translate var(--dur-snappy, 321ms) var(--ease-snappy),
+    border-color var(--dur-snappy, 321ms) var(--ease-snappy),
+    box-shadow var(--dur-snappy, 321ms) var(--ease-snappy),
+    color var(--dur-snappy, 321ms) var(--ease-snappy);
+}
+
+.btn:hover {
+  translate: 0 -2px;
+  border-color: var(--ghost);
+  box-shadow: 0 0 26px rgba(159, 231, 245, 0.35);
+  color: var(--ghost);
+}
+
+.btn:focus-visible {
+  outline: 2px solid var(--ghost);
+  outline-offset: 4px;
+}
+
+/* ── M3 Pulse ring (BEGIN button only) ───────────────────────────────── */
+@keyframes pulse-ring {
+  0%   { box-shadow: 0 0 0 0px rgba(159, 231, 245, 0.55); }
+  60%  { box-shadow: 0 0 0 16px rgba(159, 231, 245, 0); }
+  100% { box-shadow: 0 0 0 16px rgba(159, 231, 245, 0); }
+}
+
+.btn--pulse {
+  animation: pulse-ring 2.8s ease-out infinite;
+}
+
+/* ── M8 Toggle knob ──────────────────────────────────────────────────── */
+/*
+ * The knob slides with the jelly easing when the toggle state changes.
+ * Works with both ARIA-based toggles (role=switch aria-checked)
+ * and native checkbox-driven patterns.
+ */
+.toggle__knob {
+  transition: translate var(--dur-jelly, 883ms) var(--ease-jelly);
+}
+
+.toggle[aria-checked="true"] .toggle__knob,
+.toggle:has(input:checked) .toggle__knob {
+  translate: 16px 0;
+}
+
+/* ── Reduced motion overrides ────────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  .btn {
+    transition: none;
+  }
+
+  .btn--pulse {
+    animation: none;
+  }
+
+  .toggle__knob {
+    transition: none;
+  }
+}
