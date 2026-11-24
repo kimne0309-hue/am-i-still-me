@@ -8,7 +8,7 @@ Work top to bottom, one task per Kiro run. After every task: `npm test` is green
 - [x] 3. GitHub Actions deploy to Pages (lint → test → e2e → build → deploy) with a placeholder page, so the live link exists from day 1. (design §14)
 
 ## Phase 1 — Pure core, test-first
-- [ ] 4. `core/rng.ts` + tests (determinism, [0,1), shuffle is a non-mutating permutation). (P2, R15)
+- [x] 4. `core/rng.ts` + tests (determinism, [0,1), shuffle is a non-mutating permutation). (P2, R15)
 - [ ] 5. `core/grid.ts` (integer edges, neighbors, adjacent pairs) + P3.
 - [ ] 6. `core/replacement.ts`: order, restore order, effect assignment, reassembly map + inverse + P1, P4, P5, P9. (R5.2, R6.6, R8.2)
 - [ ] 7. `core/schedule.ts` auto crescendo + P14.
